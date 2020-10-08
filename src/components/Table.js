@@ -104,7 +104,7 @@ export default function Table(game) {
       />
       <Container>
         <section>
-          <p id="room-title">Sala {game.gameID}</p>
+          <p id="room-title">Partida {game.gameID}</p>
           {!game.isConnected ? (
             <p className="warning">Desconectado - Intentando reconectar...</p>
           ) : null}
