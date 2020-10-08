@@ -104,9 +104,9 @@ export default function Table(game) {
       />
       <Container>
         <section>
-          <p id="room-title">Room {game.gameID}</p>
+          <p id="room-title">Sala {game.gameID}</p>
           {!game.isConnected ? (
-            <p className="warning">Disconnected - attempting to reconnect...</p>
+            <p className="warning">Desconectado - Intentando reconectar...</p>
           ) : null}
           <div id="buzzer">
             <button
@@ -119,7 +119,7 @@ export default function Table(game) {
                 }
               }}
             >
-              {game.G.locked ? 'Locked' : buzzed ? 'Buzzed' : 'Buzz'}
+              {game.G.locked ? 'Cerrado' : buzzed ? 'Listo' : 'Apretar'}
             </button>
           </div>
           {isHost ? (
@@ -129,7 +129,7 @@ export default function Table(game) {
                   className="text-button"
                   onClick={() => game.moves.toggleLock()}
                 >
-                  {game.G.locked ? 'Unlock buzzers' : 'Lock buzzers'}
+                  {game.G.locked ? 'Habilitar botones' : 'Deshabilitar botones'}
                 </button>
               </div>
               <div className="button-container">
@@ -137,7 +137,7 @@ export default function Table(game) {
                   disabled={isEmpty(game.G.queue)}
                   onClick={() => game.moves.resetBuzzers()}
                 >
-                  Reset all buzzers
+                  Reiniciar todos los botones
                 </button>
               </div>
               <div className="divider" />
