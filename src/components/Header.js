@@ -51,7 +51,7 @@ export default function Header({
         <div className="nav-buttons">
           {!isNil(sound) ? (
             <button className="text-button" onClick={() => setSound()}>
-              {sound ? 'Turn off sound' : 'Turn on sound'}
+              {sound ? 'Activar sonido' : 'Silenciar'}
             </button>
           ) : null}
           {clearAuth ? (
