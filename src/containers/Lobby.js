@@ -16,12 +16,12 @@ const ERROR_TYPE = {
 };
 
 const ERROR_MESSAGE = {
-  [ERROR_TYPE.emptyCode]: 'Please enter a room code',
-  [ERROR_TYPE.roomCode]: 'Unable to join room with this code',
-  [ERROR_TYPE.name]: 'Please enter your player name',
-  [ERROR_TYPE.dupName]: 'Player name already taken',
-  [ERROR_TYPE.hostRoom]: 'Unable to create room, please try again',
-  [ERROR_TYPE.fullRoom]: 'Room has reached capacity',
+  [ERROR_TYPE.emptyCode]: 'Ingresá un código de partida',
+  [ERROR_TYPE.roomCode]: 'No existe una partida con ese código',
+  [ERROR_TYPE.name]: 'Ingresá tu nombre',
+  [ERROR_TYPE.dupName]: 'Ese nombre ya está ocupado',
+  [ERROR_TYPE.hostRoom]: 'Imposible crear la partida, intentá nuevamente',
+  [ERROR_TYPE.fullRoom]: 'Partida completa',
 };
 
 export default function Lobby({ setAuth }) {
@@ -122,9 +122,9 @@ export default function Lobby({ setAuth }) {
 
   const form = joinMode ? (
     <Form className="lobby-form" onSubmit={(e) => handleSubmit(e)}>
-      <h3>Join a game</h3>
+      <h3>Unirse a una partida</h3>
       <Form.Group controlId="room">
-        <Form.Label>Room code</Form.Label>
+        <Form.Label>Código de partida</Form.Label>
         <Form.Control
           value={room}
           autoComplete="off"
@@ -139,7 +139,7 @@ export default function Lobby({ setAuth }) {
       </Form.Group>
 
       <Form.Group controlId="name">
-        <Form.Label>Your name</Form.Label>
+        <Form.Label>Tu nombre</Form.Label>
         <Form.Control
           value={name}
           onChange={(e) => {
@@ -151,10 +151,10 @@ export default function Lobby({ setAuth }) {
 
       <div className="error-message">{error}</div>
       <button type="submit" disabled={loading}>
-        {loading ? 'Joining...' : 'Join'}
+        {loading ? 'Uniéndote...' : 'Unirse'}
       </button>
       <div className="switcher">
-        Hosting a game?{' '}
+        ¿Organizando una partida?{' '}
         <button
           className="inline"
           onClick={() => {
@@ -162,7 +162,7 @@ export default function Lobby({ setAuth }) {
             setJoinMode(false);
           }}
         >
-          Create room
+          Crear una partida
         </button>
       </div>
     </Form>
@@ -170,7 +170,7 @@ export default function Lobby({ setAuth }) {
     <Form className="lobby-form" onSubmit={(e) => handleSubmit(e)}>
       <h3>Host a game</h3>
       <Form.Group controlId="name">
-        <Form.Label>Your name</Form.Label>
+        <Form.Label>Tu nombre</Form.Label>
         <Form.Control
           value={name}
           onChange={(e) => {
@@ -182,10 +182,10 @@ export default function Lobby({ setAuth }) {
 
       <div className="error-message">{error}</div>
       <button type="submit" disabled={loading}>
-        {loading ? 'Creating...' : 'Host'}
+        {loading ? 'Creando...' : 'Organizador'}
       </button>
       <div className="switcher">
-        Joining a game?{' '}
+        ¿Uniéndote a una partida?{' '}
         <button
           className="inline"
           onClick={() => {
@@ -193,7 +193,7 @@ export default function Lobby({ setAuth }) {
             setJoinMode(true);
           }}
         >
-          Enter room
+          Entrar en la partida
         </button>
       </div>
     </Form>
@@ -202,19 +202,19 @@ export default function Lobby({ setAuth }) {
   const touts = (
     <div className="touts">
       <div>
-        <h4>Simple multiplayer buzzer system</h4>
-        <p>Host a room and invite up to 100 people to join</p>
+        <h4>Sistema de partidas multijugador</h4>
+        <p>Creá una partida e invitá a los participantes</p>
       </div>
       <div>
-        <h4>Join on any device</h4>
+        <h4>Unirse desde cualquier dispositivo</h4>
         <p>
-          Use your computer, smartphone, or tablet to join and start buzzing
+          Accedé con tu computadora, celular o tablet.
         </p>
       </div>
       <div>
-        <h4>Free to use</h4>
+        <h4>Fácil de usar</h4>
         <p>
-          Perfect for online quiz bowl, trivia night, or a classroom activity
+          Perfecto para juegos de preguntas y respuestas, trivias o clases online.
         </p>
       </div>
     </div>
