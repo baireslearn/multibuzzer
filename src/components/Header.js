@@ -56,7 +56,7 @@ export default function Header({
           ) : null}
           {clearAuth ? (
             <button className="text-button" onClick={() => leave()}>
-              Leave game
+              Salir
             </button>
           ) : null}
         </div>
