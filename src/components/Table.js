@@ -145,7 +145,7 @@ export default function Table(game) {
           ) : null}
         </section>
         <div className="queue">
-          <p>Players Buzzed</p>
+          <p>Participantes que presionaron el botón</p>
           <ul>
             {buzzedPlayers.map(({ id, name, timestamp, connected }, i) => (
               <li key={id} className={isHost ? 'resettable' : null}>
@@ -176,7 +176,7 @@ export default function Table(game) {
           </ul>
         </div>
         <div className="queue">
-          <p>Other Players</p>
+          <p>Participantes</p>
           <ul>
             {activePlayers.map(({ id, name, connected }) => (
               <li key={id}>
