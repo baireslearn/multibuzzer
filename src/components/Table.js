@@ -137,7 +137,7 @@ export default function Table(game) {
                   disabled={isEmpty(game.G.queue)}
                   onClick={() => game.moves.resetBuzzers()}
                 >
-                  Reiniciar todos los botones
+                  Reiniciar partida
                 </button>
               </div>
               <div className="divider" />
