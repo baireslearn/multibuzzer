@@ -122,7 +122,7 @@ export default function Lobby({ setAuth }) {
 
   const form = joinMode ? (
     <Form className="lobby-form" onSubmit={(e) => handleSubmit(e)}>
-      <h3>Unirse a una partida</h3>
+      <h3>Unite a una partida</h3>
       <Form.Group controlId="room">
         <Form.Label>Código de partida</Form.Label>
         <Form.Control
@@ -151,7 +151,7 @@ export default function Lobby({ setAuth }) {
 
       <div className="error-message">{error}</div>
       <button type="submit" disabled={loading}>
-        {loading ? 'Uniéndote...' : 'Unirse'}
+        {loading ? 'Uniéndote...' : 'Unir'}
       </button>
       <div className="switcher">
         ¿Organizando una partida?{' '}
@@ -162,13 +162,13 @@ export default function Lobby({ setAuth }) {
             setJoinMode(false);
           }}
         >
-          Crear una partida
+          Creá una partida
         </button>
       </div>
     </Form>
   ) : (
     <Form className="lobby-form" onSubmit={(e) => handleSubmit(e)}>
-      <h3>Host a game</h3>
+      <h3>Creá una partida</h3>
       <Form.Group controlId="name">
         <Form.Label>Tu nombre</Form.Label>
         <Form.Control
@@ -182,7 +182,7 @@ export default function Lobby({ setAuth }) {
 
       <div className="error-message">{error}</div>
       <button type="submit" disabled={loading}>
-        {loading ? 'Creando...' : 'Organizador'}
+        {loading ? 'Creando...' : 'Crear'}
       </button>
       <div className="switcher">
         ¿Uniéndote a una partida?{' '}
@@ -193,7 +193,7 @@ export default function Lobby({ setAuth }) {
             setJoinMode(true);
           }}
         >
-          Entrar en la partida
+          Entrá en la partida
         </button>
       </div>
     </Form>
@@ -206,7 +206,7 @@ export default function Lobby({ setAuth }) {
         <p>Creá una partida e invitá a los participantes</p>
       </div>
       <div>
-        <h4>Unirse desde cualquier dispositivo</h4>
+        <h4>Unite desde cualquier dispositivo</h4>
         <p>
           Accedé con tu computadora, celular o tablet.
         </p>
